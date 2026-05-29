@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ApexDash Settings</title>
+  <style>
+    body { margin:0; padding:14px; background:#1e1e1e; color:#f5f5f5; font-family:Arial,sans-serif; font-size:13px; }
+    .field { margin-bottom:14px; }
+    label { display:block; margin-bottom:6px; color:#cfcfcf; font-weight:700; }
+    select { width:100%; box-sizing:border-box; padding:8px; background:#2b2b2b; color:#fff; border:1px solid #555; border-radius:6px; }
+    .hint { margin-top:12px; color:#aaa; line-height:1.4; }
+    .section { display:none; }
+    .section.active { display:block; }
+    .badge { display:inline-block; margin:0 0 10px 0; padding:5px 8px; border:1px solid #00A4DC; color:#d8f6ff; border-radius:999px; font-weight:700; }
+    .warn { color:#ffcc66; }
+  </style>
+</head>
+<body>
+  <div class="badge" id="actionName">ApexDash</div>
+
+  <div class="section" data-section="metric gauge">
+    <div class="field">
+      <label>Metric</label>
+      <select id="metric">
+        <option value="speed">Speed</option>
+        <option value="rpm">RPM</option>
+        <option value="gear">Gear</option>
+        <option value="boost">Boost</option>
+        <option value="power">Power</option>
+        <option value="torque">Torque</option>
+        <option value="fuel">Fuel</option>
+        <option value="throttle">Throttle</option>
+        <option value="brake">Brake</option>
+        <option value="clutch">Clutch</option>
+        <option value="handbrake">Handbrake</option>
+        <option value="steer">Steering</option>
+        <option value="tiretemp">Max Tire Temp</option>
+        <option value="slip">Tire Slip</option>
+        <option value="grip">Grip Coach</option>
+        <option value="pi">Car Class / PI</option>
+        <option value="drivetrain">Drivetrain</option>
+        <option value="gforce">G-Force</option>
+        <option value="maxspeed">Session Max Speed</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section" data-section="shiftlight">
+    <div class="field">
+      <label>Shift Light Segment</label>
+      <select id="segment">
+        <option value="1">Segment 1</option>
+        <option value="2">Segment 2</option>
+        <option value="3">Segment 3</option>
+        <option value="4">Segment 4</option>
+        <option value="5">Segment 5 / SHIFT</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Total Segments</label>
+      <select id="segments">
+        <option value="5">5 segments</option>
+        <option value="4">4 segments</option>
+        <option value="6">6 segments</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section" data-section="tires">
+    <div class="field">
+      <label>Tire Mode</label>
+      <select id="tireMode">
+        <option value="temps4">4 Tire Temps</option>
+        <option value="maxtemp">Max Tire Temp</option>
+        <option value="slip">Front/Rear Slip</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section" data-section="inputmonitor">
+    <div class="field">
+      <label>Input Mode</label>
+      <select id="inputMode">
+        <option value="pedals">Throttle / Brake</option>
+        <option value="throttle">Throttle</option>
+        <option value="brake">Brake</option>
+        <option value="clutch">Clutch</option>
+        <option value="handbrake">Handbrake</option>
+        <option value="steer">Steering</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section" data-section="session">
+    <div class="field">
+      <label>Session Stat</label>
+      <select id="sessionStat">
+        <option value="maxspeed">Max Speed</option>
+        <option value="maxboost">Max Boost</option>
+        <option value="maxpower">Max Power</option>
+        <option value="zero100">0-100 km/h</option>
+      </select>
+    </div>
+    <div class="hint">Kliknięcie kafelka Session resetuje statystyki sesji.</div>
+  </div>
+
+  <div class="section" data-section="status">
+    <div class="field">
+      <label>Status Mode</label>
+      <select id="statusMode">
+        <option value="packets">Packets/s</option>
+        <option value="ports">Forza Port</option>
+        <option value="source">Packet Source</option>
+        <option value="raw">Raw Packet Counter</option>
+      </select>
+    </div>
+    <div class="hint warn">Debug: kliknięcie kafelka Status wstrzykuje testowy pakiet. Jeśli wtedy kafelki pokażą dane, render działa, a problem jest po stronie Forza Data Out / portu.</div>
+  </div>
+
+  <div class="field common">
+    <label>Theme</label>
+    <select id="theme">
+      <option value="erza">ERZA Blue</option>
+      <option value="redline">Redline</option>
+      <option value="minimal">Minimal</option>
+    </select>
+  </div>
+
+  <div class="field common refreshBlock">
+    <label>Refresh Rate</label>
+    <select id="refresh">
+      <option value="eco">Eco - 2x/s</option>
+      <option value="normal">Normal - 4x/s</option>
+      <option value="fast">Fast - 10x/s</option>
+    </select>
+  </div>
+
+  <div class="hint">ApexDash działa tylko na danych z Forzy. Relay do SimHub i hotkeye zostały usunięte.</div>
+
+<script>
+const ACTION_NAMES = {
+  "com.nineerza.apexdash.speed": "Speed Tile",
+  "com.nineerza.apexdash.rpm": "RPM Tile",
+  "com.nineerza.apexdash.gear": "Gear Tile",
+  "com.nineerza.apexdash.boost": "Boost Tile",
+  "com.nineerza.apexdash.metric": "Metric Tile",
+  "com.nineerza.apexdash.gauge": "Gauge Tile",
+  "com.nineerza.apexdash.shiftlight": "Shift Light",
+  "com.nineerza.apexdash.tires": "Tire Monitor",
+  "com.nineerza.apexdash.grip": "Grip Coach",
+  "com.nineerza.apexdash.inputmonitor": "Input Monitor",
+  "com.nineerza.apexdash.session": "Session Stats",
+  "com.nineerza.apexdash.status": "Telemetry Status"
+};
+
+const ACTION_SECTIONS = {
+  "com.nineerza.apexdash.speed": "metric",
+  "com.nineerza.apexdash.rpm": "metric",
+  "com.nineerza.apexdash.gear": "metric",
+  "com.nineerza.apexdash.boost": "metric",
+  "com.nineerza.apexdash.metric": "metric",
+  "com.nineerza.apexdash.gauge": "gauge",
+  "com.nineerza.apexdash.shiftlight": "shiftlight",
+  "com.nineerza.apexdash.tires": "tires",
+  "com.nineerza.apexdash.grip": "grip",
+  "com.nineerza.apexdash.inputmonitor": "inputmonitor",
+  "com.nineerza.apexdash.session": "session",
+  "com.nineerza.apexdash.status": "status"
+};
+
+let websocket = null;
+let uuid = null;
+let action = null;
+let settings = {};
+
+function connectElgatoStreamDeckSocket(inPort, inPropertyInspectorUUID, inRegisterEvent, inInfo, inActionInfo) {
+  uuid = inPropertyInspectorUUID;
+  websocket = new WebSocket("ws://127.0.0.1:" + inPort);
+
+  try {
+    const info = JSON.parse(inActionInfo);
+    action = info.action;
+    settings = Object.assign({}, info.payload.settings || {});
+  } catch (e) {}
+
+  websocket.onopen = function () {
+    websocket.send(JSON.stringify({ event: inRegisterEvent, uuid }));
+    setupUi();
+    loadForm();
+  };
+
+  websocket.onmessage = function (event) {
+    const msg = JSON.parse(event.data);
+    if (msg.event === "didReceiveSettings") {
+      settings = Object.assign(settings, msg.payload.settings || {});
+      loadForm();
+    }
+  };
+}
+
+function setupUi() {
+  document.getElementById("actionName").textContent = ACTION_NAMES[action] || "ApexDash";
+  const section = ACTION_SECTIONS[action] || "metric";
+  document.querySelectorAll(".section").forEach(el => {
+    const sections = (el.getAttribute("data-section") || "").split(" ");
+    el.classList.toggle("active", sections.includes(section));
+  });
+}
+
+function val(id, fallback) {
+  const el = document.getElementById(id);
+  return el ? (el.value || fallback) : fallback;
+}
+
+function setVal(id, value) {
+  const el = document.getElementById(id);
+  if (el && value !== undefined && value !== null) el.value = value;
+}
+
+function loadForm() {
+  setVal("metric", settings.metric || defaultMetricForAction(action));
+  setVal("segment", settings.segment || "1");
+  setVal("segments", settings.segments || "5");
+  setVal("tireMode", settings.tireMode || "temps4");
+  setVal("inputMode", settings.inputMode || "pedals");
+  setVal("sessionStat", settings.sessionStat || "maxspeed");
+  setVal("statusMode", settings.statusMode || "packets");
+  setVal("theme", settings.theme || "erza");
+  setVal("refresh", settings.refresh || "normal");
+}
+
+function defaultMetricForAction(action) {
+  if (action === "com.nineerza.apexdash.rpm") return "rpm";
+  if (action === "com.nineerza.apexdash.gear") return "gear";
+  if (action === "com.nineerza.apexdash.boost") return "boost";
+  if (action === "com.nineerza.apexdash.gauge") return "rpm";
+  return "speed";
+}
+
+function saveSettings() {
+  settings = {
+    metric: val("metric", "speed"),
+    segment: val("segment", "1"),
+    segments: val("segments", "5"),
+    tireMode: val("tireMode", "temps4"),
+    inputMode: val("inputMode", "pedals"),
+    sessionStat: val("sessionStat", "maxspeed"),
+    statusMode: val("statusMode", "packets"),
+    theme: val("theme", "erza"),
+    refresh: val("refresh", "normal")
+  };
+  websocket.send(JSON.stringify({ event: "setSettings", context: uuid, payload: settings }));
+}
+
+document.querySelectorAll("select").forEach(el => el.addEventListener("change", saveSettings));
+</script>
+</body>
+</html>

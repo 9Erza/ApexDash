@@ -1,0 +1,313 @@
+{
+  "Actions": [
+    {
+      "UUID": "com.nineerza.apexdash.speed",
+      "Name": "Speed Tile",
+      "Tooltip": "Ready-to-use speed telemetry tile.",
+      "Icon": "images/icon_speed.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_speed.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "metric": "speed",
+        "theme": "erza",
+        "refresh": "normal"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.rpm",
+      "Name": "RPM Tile",
+      "Tooltip": "Ready-to-use RPM telemetry tile.",
+      "Icon": "images/icon_rpm.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_rpm.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "metric": "rpm",
+        "theme": "erza",
+        "refresh": "fast"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.gear",
+      "Name": "Gear Tile",
+      "Tooltip": "Ready-to-use gear telemetry tile.",
+      "Icon": "images/icon_gear.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_gear.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "metric": "gear",
+        "theme": "erza",
+        "refresh": "fast"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.boost",
+      "Name": "Boost Tile",
+      "Tooltip": "Ready-to-use turbo boost telemetry tile.",
+      "Icon": "images/icon_boost.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_boost.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "metric": "boost",
+        "theme": "erza",
+        "refresh": "normal"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.metric",
+      "Name": "Metric Tile",
+      "Tooltip": "Universal telemetry tile: speed, RPM, gear, boost, power, fuel and more.",
+      "Icon": "images/icon_metric.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_metric.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "metric": "speed",
+        "theme": "erza",
+        "refresh": "normal"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.gauge",
+      "Name": "Gauge Tile",
+      "Tooltip": "Gauge style telemetry tile for RPM, fuel, throttle, brake or boost.",
+      "Icon": "images/icon_gauge.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_gauge.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "metric": "rpm",
+        "theme": "erza",
+        "refresh": "fast"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.shiftlight",
+      "Name": "Shift Light",
+      "Tooltip": "RPM shift-light segment. Add several buttons next to each other.",
+      "Icon": "images/icon_shift_light.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_shift_light.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "segment": "1",
+        "segments": "5",
+        "theme": "redline",
+        "refresh": "fast"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.tires",
+      "Name": "Tire Monitor",
+      "Tooltip": "Tire temperatures, tire slip and four-wheel tire monitoring.",
+      "Icon": "images/icon_tires.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_tires.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "tireMode": "temps4",
+        "theme": "erza",
+        "refresh": "normal"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.grip",
+      "Name": "Grip Coach",
+      "Tooltip": "Smart grip status: GOOD, REAR SLIP, UNDERSTEER, BAD GRIP.",
+      "Icon": "images/icon_grip.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_grip.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "theme": "erza",
+        "refresh": "fast"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.inputmonitor",
+      "Name": "Input Monitor",
+      "Tooltip": "Throttle, brake, clutch, handbrake and steering telemetry.",
+      "Icon": "images/icon_inputs.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_inputs.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "inputMode": "pedals",
+        "theme": "erza",
+        "refresh": "fast"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.session",
+      "Name": "Session Stats",
+      "Tooltip": "Max speed, max boost, max power and 0-100 km/h session stats.",
+      "Icon": "images/icon_session_stats.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_session_stats.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "sessionStat": "maxspeed",
+        "theme": "erza",
+        "refresh": "normal"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    },
+    {
+      "UUID": "com.nineerza.apexdash.status",
+      "Name": "Telemetry Status",
+      "Tooltip": "Telemetry connection status, packets per second, port and debug diagnostics.",
+      "Icon": "images/icon_status.png",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/icon_status.png",
+          "TitleAlignment": "middle",
+          "ShowTitle": false
+        }
+      ],
+      "Settings": {
+        "statusMode": "packets",
+        "theme": "minimal",
+        "refresh": "normal"
+      },
+      "PropertyInspectorPath": "pi.html",
+      "UserTitleEnabled": false,
+      "SupportedInMultiActions": true
+    }
+  ],
+  "Version": "0.4.3",
+  "Name": "ApexDash",
+  "Icon": "images/icon_main.png",
+  "CategoryIcon": "images/icon_main.png",
+  "Category": "ApexDash",
+  "Description": "Advanced telemetry dashboard for Forza Horizon Data Out. Data-only unofficial plugin by 9Erza. SimHub relay and hotkeys removed.",
+  "Author": "9Erza",
+  "CodePath": "main.js",
+  "SDKVersion": 1,
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "2.10.179.426"
+  },
+  "Nodejs": {
+    "Version": "20"
+  }
+}
