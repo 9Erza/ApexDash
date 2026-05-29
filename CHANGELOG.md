@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.4.4 — Lazy runtime / data-only build
+
+- Added lazy runtime: UDP listener starts only when an ApexDash tile is visible/active.
+- Added auto-stop: UDP listener and debug HTTP server close after the last ApexDash tile disappears.
+- Added cleanup on Stream Dock/WebSocket close, SIGINT and SIGTERM.
+- Kept data-only scope: no hotkeys, no SimHub relay, no input worker.
+- Kept debug endpoint while runtime is active: `http://127.0.0.1:28766/state`.
+- Kept self-test endpoint while runtime is active: `http://127.0.0.1:28766/simulate`.
+
 ## v0.4.3 — Data-only fixed build
 
 - Renamed plugin to ApexDash.

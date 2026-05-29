@@ -79,3 +79,8 @@ http://127.0.0.1:28766/simulate
 ```
 
 Jeżeli po tym przyciski pokazują dane, plugin działa, a problem jest w ustawieniach Forzy.
+
+
+## Uwaga o działaniu w tle
+
+ApexDash v0.4.4 uruchamia nasłuch UDP dopiero wtedy, gdy przynajmniej jeden kafelek ApexDash jest widoczny na aktywnej stronie Stream Docka. Po usunięciu/przełączeniu strony bez kafelków ApexDash port `23666` powinien zostać zwolniony po kilku sekundach.

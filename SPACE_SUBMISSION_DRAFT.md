@@ -29,3 +29,6 @@ This is a data-only plugin. It does not include hotkeys, game automation, SimHub
 ## Disclaimer
 
 ApexDash is an unofficial plugin and is not affiliated with Microsoft, Turn 10 Studios, Playground Games, or the Forza franchise.
+
+
+Runtime behavior: Lazy runtime. UDP listener starts only while ApexDash tiles are visible/active and stops after all ApexDash tiles disappear.

@@ -58,3 +58,8 @@ Self-test:
 ```txt
 http://127.0.0.1:28766/simulate
 ```
+
+
+## Background behavior
+
+ApexDash v0.4.4 starts its UDP listener only when at least one ApexDash tile is visible on the active Stream Dock page. After removing/switching away from ApexDash tiles, port `23666` should be released after a few seconds.

@@ -19,7 +19,8 @@ It turns your Stream Dock / Mirabox / AJAZZ device into a racing telemetry dashb
 - Session Stats tile.
 - Telemetry Status tile.
 - Data-only build: no hotkeys, no SimHub relay.
-- Debug endpoint for troubleshooting.
+- Lazy runtime: UDP starts only when ApexDash tiles are visible/active.
+- Debug endpoint for troubleshooting while runtime is active.
 
 ## Requirements
 
@@ -79,7 +80,9 @@ ApexDash listens on:
 
 ## Debugging
 
-After Stream Dock starts, open:
+The debug endpoint is active only when at least one ApexDash tile is visible/active on your Stream Dock page.
+
+After Stream Dock starts and an ApexDash tile is visible, open:
 
 ```txt
 http://127.0.0.1:28766/state
@@ -130,7 +133,7 @@ Then:
 Get-Process -Id <PID> | Select-Object Id, ProcessName, Path
 ```
 
-The process should be Stream Dock's `node20.exe` running ApexDash.
+When an ApexDash tile is visible, the process should be Stream Dock's `node20.exe` running ApexDash. When no ApexDash tile is visible, ApexDash should release the UDP port after a few seconds.
 
 ### Old plugin conflict
 

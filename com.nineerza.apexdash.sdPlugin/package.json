@@ -1,0 +1,11 @@
+{
+  "name": "com.nineerza.apexdash.sdplugin",
+  "version": "0.4.4",
+  "description": "ApexDash telemetry dashboard for Forza Horizon Data Out by 9Erza",
+  "main": "main.js",
+  "type": "commonjs",
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "author": "9Erza"
+}
