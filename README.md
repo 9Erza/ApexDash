@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+  <img src="https://raw.githubusercontent.com/9Erza/ApexDash/refs/heads/main/assets/apexdash.ico" alt="ApexDash Logo" width="160" />
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/github/license/9Erza/ApexDash?style=for-the-badge" alt="License" />
   <img src="https://img.shields.io/github/v/release/9Erza/ApexDash?style=for-the-badge" alt="Release" />
   <img src="https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-0078D6?style=for-the-badge" alt="Platform Windows 10 / 11" />
